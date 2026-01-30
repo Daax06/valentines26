@@ -1,28 +1,3 @@
-// Music player controls
-function setupMusicPlayer() {
-    const audio = document.getElementById('valentineAudio');
-    const playPauseBtn = document.getElementById('musicPlayPause');
-    const volumeSlider = document.getElementById('musicVolume');
-    let isPlaying = false;
-
-    playPauseBtn.addEventListener('click', () => {
-        if (isPlaying) {
-            audio.pause();
-            playPauseBtn.textContent = 'Play';
-        } else {
-            audio.play();
-            playPauseBtn.textContent = 'Pause';
-        }
-        isPlaying = !isPlaying;
-    });
-
-    volumeSlider.addEventListener('input', () => {
-        audio.volume = volumeSlider.value;
-    });
-
-    // Set initial volume
-    audio.volume = volumeSlider.value;
-}
 // valentinesmain.js
 // Floating hearts effect
 function createFloatingHearts() {
@@ -129,7 +104,6 @@ function addDynamicKeyframes() {
 // Initialize all effects on DOMContentLoaded
 window.addEventListener('DOMContentLoaded', () => {
     createFloatingHearts();
-    setupMusicPlayer();
     setupValentineOptions();
     setupCardHover();
     addDynamicKeyframes();
